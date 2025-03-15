@@ -66,8 +66,8 @@ function App() {
 
   return (
     <div style={{ maxWidth: '600px', margin: '0 auto', padding: '20px' }}>
-      <h1>Life Expectancy Predictor</h1>
-      <p><strong>Disclaimer:</strong> This isn’t medical advice.</p>
+      <h1>Life Expectancy Predictor ⏳</h1>
+      <h2>Ever wondered how your lifestyle choices impact your lifespan? Let's crunch the numbers.</h2>
       <form onSubmit={handleSubmit}>
         <div>
           <label>Age: </label>
@@ -129,23 +129,26 @@ function App() {
             I acknowledge that this information is for entertainment/educational purposes only and not a medical diagnosis.
           </label>
         </div>
-        <button type="submit">Get Life Expectancy</button>
+        <button type="submit">Press the button to see your results.</button>
       </form>
 
       {result && (
         <div style={{ marginTop: '20px' }}>
           <h2>Estimated Total Life Span: {result} years</h2>
-          {/* Simple progress bar visualization (assuming 120 years as max for scale) */}
+          {/* Simple progress bar visualization (assuming 122 years as max for scale) */}
           <div style={{ background: '#eee', height: '20px', width: '100%', borderRadius: '10px' }}>
             <div
               style={{
                 background: '#4caf50',
-                width: `${(result / 120) * 100}%`,
+                width: `${(result / 122) * 100}%`,
                 height: '100%',
                 borderRadius: '10px'
               }}
             ></div>
           </div>
+          <p>The oldest verified human lifespan on record is 122 years and 164 days, achieved by Jeanne Calment of France, who died in 1997. That’s the highest age with reliable documentation recognized by researchers. However, from a scientific standpoint, there isn’t a universal consensus on whether there’s a strict biological “cap” on human longevity.
+
+Most researchers agree that while living past 120 is extremely rare, improvements in healthcare, lifestyle, and biotechnology might gradually increase longevity. But as of now, 122 years stands as the documented maximum.</p>
         </div>
       )}
 
@@ -167,7 +170,7 @@ function App() {
             borderRadius: '5px',
             textAlign: 'center'
           }}>
-            <p>Disclaimer: These results are only estimates and not medical advice.</p>
+            <p>Disclaimer: This is for educational and entertainment purposes only. It is not medical advice.</p>
             <button onClick={() => setShowDisclaimer(false)}>Close</button>
           </div>
         </div>
